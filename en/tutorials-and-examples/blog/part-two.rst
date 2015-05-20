@@ -288,7 +288,7 @@ PostsController::
         public function add() {
             if ($this->request->is('post')) {
                 $this->Post->create();
-                if ($this->Post->save($this->request->data)) {
+                if ($this->Post->save($this->request->data['post'])) {
                     $this->Session->setFlash(__('Your post has been saved.'));
                     return $this->redirect(array('action' => 'index'));
                 }
